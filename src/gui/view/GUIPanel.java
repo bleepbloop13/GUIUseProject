@@ -1,11 +1,9 @@
 package gui.view;
 
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
+import javax.swing.*;
 import gui.controller.GUIController;
 import java.awt.event.*;
+import java.awt.Color;
 
 /**
  * 
@@ -56,6 +54,7 @@ public class GUIPanel extends JPanel
 	 * Sets up the listeners for any buttons
 	 */
 	private void setupListeners()
+
 	{
 		firstButton.addActionListener(new ActionListener()
 		{
@@ -71,23 +70,39 @@ public class GUIPanel extends JPanel
 			{
 				
 			}
+
 			public void mouseReleased(MouseEvent released)
 			{
-				
+				changeRandomColor();
 			}
+
 			public void mousePressed(MouseEvent pressed)
 			{
-				
+				changeRandomColor();
 			}
+
 			public void mouseEntered(MouseEvent entered)
 			{
-				
+				changeRandomColor();
 			}
+
 			public void mouseExited(MouseEvent exited)
 			{
-				
+				changeRandomColor();
 			}
-			
+
 		});
 	}
+
+	private void changeRandomColor()
+	{
+		int red, green, blue;
+
+		red = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
+
+		this.setBackground(new Color(red, green, blue));
+	}
+
 }
