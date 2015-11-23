@@ -68,7 +68,7 @@ public class GUIPanel extends JPanel
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
-				
+
 			}
 
 			public void mouseReleased(MouseEvent released)
@@ -91,6 +91,24 @@ public class GUIPanel extends JPanel
 				changeRandomColor();
 			}
 
+		});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseMoved(MouseEvent moved)
+			{
+				if((moved.getX() > 25 && moved.getX() < 40) && (moved.getY() > 50) && moved.getY() < 70)
+				{
+					changeRandomColor();
+				}
+			}
+			public void mouseDragged(MouseEvent dragged)
+			{
+				if(dragged.isAltDown())
+				{
+					firstTextField.setText("you held alt and dragged!");
+				}
+			}
 		});
 	}
 
