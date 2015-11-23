@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import gui.controller.GUIController;
+import java.awt.event.*;
 
 /**
  * 
@@ -24,7 +25,7 @@ public class GUIPanel extends JPanel
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("Do not click the button");
 		firstTextField = new JTextField("you can type words here");
-		
+
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -56,6 +57,37 @@ public class GUIPanel extends JPanel
 	 */
 	private void setupListeners()
 	{
+		firstButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				firstTextField.setText("YOU CLICKED THE BUTTON YOU WHORE!");
+			}
+		});
 
+		this.addMouseListener(new MouseListener()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				
+			}
+			public void mouseReleased(MouseEvent released)
+			{
+				
+			}
+			public void mousePressed(MouseEvent pressed)
+			{
+				
+			}
+			public void mouseEntered(MouseEvent entered)
+			{
+				
+			}
+			public void mouseExited(MouseEvent exited)
+			{
+				
+			}
+			
+		});
 	}
 }
